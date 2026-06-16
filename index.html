@@ -130,15 +130,15 @@
                             </a>
                         </div>
                     </div>
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mrevdrek" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Tu Nombre" required>
+                            <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Tu Correo" required>
+                            <input type="email" id="email" name="email" placeholder="Tu Correo" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Tu Mensaje" rows="4" required></textarea>
+                            <textarea id="message" name="message" placeholder="Tu Mensaje" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
                     </form>

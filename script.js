@@ -99,18 +99,32 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = 'Enviando...';
             btn.style.opacity = '0.7';
             
-            // Simulate network request
-            setTimeout(() => {
-                btn.innerText = 'Mensaje Enviado ✓';
-                btn.style.backgroundColor = 'var(--color-turquoise)';
-                form.reset();
-                
+            // Send request to Formspree
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    btn.innerText = 'Mensaje Enviado ✓';
+                    btn.style.backgroundColor = 'var(--color-turquoise)';
+                    form.reset();
+                } else {
+                    btn.innerText = 'Error al enviar';
+                    btn.style.backgroundColor = '#FF6B35';
+                }
+            }).catch(error => {
+                btn.innerText = 'Error de red';
+                btn.style.backgroundColor = '#FF6B35';
+            }).finally(() => {
                 setTimeout(() => {
                     btn.innerText = originalText;
                     btn.style.backgroundColor = '';
                     btn.style.opacity = '1';
                 }, 3000);
-            }, 1500);
+            });
         });
     }
 
