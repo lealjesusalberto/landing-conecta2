@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta2hub - Servicios Digitales</title>
+    <meta name="description" content="Conecta2hub: Plataforma de servicios digitales para los venezolanos. App de movilidad y fisioterapia digital con IA.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="#" class="logo">Conecta<span>2</span>hub</a>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#mision">Misión</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <button class="btn btn-primary" id="mobile-menu-btn" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-text fade-in-up">
+                    <h1>Innovación Digital para <span>Venezolanos</span></h1>
+                    <p>Tu plataforma integral de servicios. Movilidad inteligente y fisioterapia avanzada con Inteligencia Artificial a tu alcance.</p>
+                    <div class="hero-buttons">
+                        <a href="#servicios" class="btn btn-primary">Descubre Más</a>
+                        <a href="#contacto" class="btn btn-secondary">Únete Ahora</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in-left">
+                    <div class="floating-images-container">
+                        <img src="img/img1.jpg" alt="App Preview 1" class="floating-img img-back-left">
+                        <img src="img/img2.jpg" alt="App Preview 2" class="floating-img img-back-right">
+                        <img src="img/img3.jpg" alt="App Preview 3" class="floating-img img-front">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="services">
+            <div class="container">
+                <h2 class="section-title text-center fade-in-up">Nuestros <span>Servicios</span></h2>
+                <div class="services-grid">
+                    <div class="service-card card-transport hover-lift fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="service-icon turquoise-glow">
+                            <i class="fas fa-car-side"></i>
+                        </div>
+                        <h3>Movilidad y Transporte</h3>
+                        <p>Viaja seguro y rápido con nuestra app de transporte. Conductores verificados y tarifas transparentes para tu tranquilidad.</p>
+                    </div>
+                    <div class="service-card card-physio hover-lift fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="service-icon orange-glow">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Fisioterapia Digital IA</h3>
+                        <p>Recuperación desde casa. Nuestra IA analiza tus movimientos y personaliza rutinas de ejercicios para una rehabilitación efectiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mision" class="mission">
+            <div class="container mission-container">
+                <div class="mission-content fade-in-up">
+                    <h2 class="section-title">Nuestra <span>Misión</span></h2>
+                    <p class="mission-statement">
+                        "Conectar a los venezolanos con soluciones digitales innovadoras, mejorando su calidad de vida a través de servicios de movilidad seguros y atención de fisioterapia accesible impulsada por inteligencia artificial."
+                    </p>
+                    <div class="mission-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="100">0</span><span>%</span>
+                            <span class="stat-label">Compromiso</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="24">0</span><span>/7</span>
+                            <span class="stat-label">Disponibilidad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <div class="container">
+                <div class="contact-box fade-in-up">
+                    <div class="contact-info">
+                        <h2>Comunícate con <span>Nosotros</span></h2>
+                        <p>¿Tienes dudas o quieres ser parte de Conecta2hub? Escríbenos.</p>
+                        <ul class="contact-details">
+                            <li><i class="fas fa-envelope"></i> info@conecta2app.com</li>
+                            <li><i class="fas fa-phone-alt"></i> 04221485552</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Caracas, Venezuela</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://instagram.com/conecta2hub" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i> @conecta2hub
+                            </a>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Tu Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Tu Correo" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Tu Mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Conecta2hub. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
