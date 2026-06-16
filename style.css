@@ -423,6 +423,54 @@ h1, h2, h3, h4 {
     color: var(--color-text-muted);
 }
 
+/* Delivery Fleet */
+.delivery-fleet {
+    padding: 10rem 0;
+    position: relative;
+    background-image: url('img/delivery_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.delivery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.8) 0%, rgba(2, 12, 27, 0.6) 100%);
+    z-index: 1;
+}
+
+.delivery-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.delivery-content {
+    max-width: 600px;
+    background: rgba(17, 34, 64, 0.7);
+    padding: 4rem;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.delivery-statement {
+    font-size: 1.2rem;
+    color: var(--color-text-main);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
 /* Mission */
 .mission {
     padding: 8rem 0;
