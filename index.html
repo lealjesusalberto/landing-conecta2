@@ -4,152 +4,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conecta2hub - Servicios Digitales</title>
+    <title>CONECTA2HUB // Servicios Digitales para Venezuela</title>
     <meta name="description"
-        content="Conecta2hub: Plataforma de servicios digitales para los venezolanos. App de movilidad y fisioterapia digital con IA.">
+        content="Conecta2hub: Plataforma brutalista de servicios digitales para Venezuela. Movilidad urbana inteligente, fisioterapia digital asistida por IA y flota de delivery express.">
+    
+    <!-- Google Fonts: Space Grotesk, Outfit & Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Top Neo-Brutalist Ticker Banner in Brand Turquoise -->
+    <div class="ticker-banner">
+        <div class="ticker-track">
+            <span>⚡ 100% HECHO PARA VENEZUELA</span>
+            <span>★ MOVILIDAD URBANA</span>
+            <span>⚡ FISIOTERAPIA DIGITAL CON IA</span>
+            <span>★ FLOTA DELIVERY EXPRESS</span>
+            <span>⚡ CARACAS // 24/7 EN VIVO</span>
+            <span>★ CONEXIÓN SEGURA</span>
+            <span>⚡ 100% HECHO PARA VENEZUELA</span>
+            <span>★ MOVILIDAD URBANA</span>
+            <span>⚡ FISIOTERAPIA DIGITAL CON IA</span>
+            <span>★ FLOTA DELIVERY EXPRESS</span>
+            <span>⚡ CARACAS // 24/7 EN VIVO</span>
+            <span>★ CONEXIÓN SEGURA</span>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
     <header class="header">
-        <div class="container header-content">
-            <a href="#" class="logo">Conecta<span>2</span>hub</a>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-box">C2</span>
+                <span class="logo-text">CONECTA<span>2</span>HUB</span>
+                <span class="badge-ve">VE</span>
+            </a>
+
             <nav class="nav">
-                <a href="#inicio">Inicio</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#delivery">Delivery</a>
-                <a href="#mision">Misión</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#inicio" class="nav-link active">INICIO</a>
+                <a href="#servicios" class="nav-link">SERVICIOS</a>
+                <a href="#delivery" class="nav-link">DELIVERY</a>
+                <a href="#mision" class="nav-link">MISIÓN</a>
+                <a href="#contacto" class="nav-link">CONTACTO</a>
             </nav>
-            <button class="btn btn-primary" id="mobile-menu-btn" aria-label="Abrir menú"><i
-                    class="fas fa-bars"></i></button>
+
+            <div class="header-actions">
+                <a href="#contacto" class="btn btn-primary btn-sm">ÚNETE HOY ➔</a>
+                <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="inicio" class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-container">
-                <div class="hero-text fade-in-up">
-                    <h1>Innovación Digital para <span>Venezolanos</span></h1>
-                    <p>Tu plataforma integral de servicios. Movilidad inteligente y fisioterapia avanzada con
-                        Inteligencia Artificial a tu alcance.</p>
-                    <div class="hero-buttons">
-                        <a href="#servicios" class="btn btn-primary">Descubre Más</a>
-                        <a href="#contacto" class="btn btn-secondary">Únete Ahora</a>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="sticker-badge sticker-orange">
+                        <i class="fas fa-bolt"></i> PLATAFORMA INTEGRAL V1.0
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        INNOVACIÓN <br>
+                        <span class="highlight-turquoise">DIGITAL</span> PARA <br>
+                        <span class="highlight-orange">VENEZUELA.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Rompiendo el molde convencional: integramos <strong>movilidad inteligente</strong>, 
+                        <strong>rehabilitación asistida por Inteligencia Artificial</strong> y una 
+                        <strong>flota de envíos express</strong> en un ecosistema robusto, directo y sin rodeos.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#servicios" class="btn btn-primary btn-lg">
+                            DESCUBRIR SERVICIOS <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contacto" class="btn btn-secondary btn-lg">
+                            SOLICITAR ACCESO
+                        </a>
+                    </div>
+
+                    <div class="hero-tags">
+                        <span class="tag-pill"><i class="fas fa-check-circle"></i> Conductores Verificados</span>
+                        <span class="tag-pill"><i class="fas fa-brain"></i> Algoritmos de Visión IA</span>
+                        <span class="tag-pill"><i class="fas fa-shield-alt"></i> Pagos Protegidos</span>
                     </div>
                 </div>
-                <div class="hero-image fade-in-left">
-                    <div class="floating-images-container">
-                        <img src="img/img1.jpg" alt="App Preview 1" class="floating-img img-back-left">
-                        <img src="img/img2.jpg" alt="App Preview 2" class="floating-img img-back-right">
-                        <img src="img/img3.jpg" alt="App Preview 3" class="floating-img img-front">
+
+                <div class="hero-visual">
+                    <div class="brutalist-card-stack">
+                        <div class="sticker sticker-top-right">★ TOP RATED</div>
+                        
+                        <!-- Stacked image visual with brutalist frames -->
+                        <div class="visual-frame frame-1">
+                            <img src="img/img1.jpg" alt="Conecta2 Movilidad" class="frame-img">
+                            <div class="frame-caption">01 // TRANSPORTE SEGURO</div>
+                        </div>
+                        <div class="visual-frame frame-2">
+                            <img src="img/img2.jpg" alt="Conecta2 Fisioterapia IA" class="frame-img">
+                            <div class="frame-caption">02 // FISIOTERAPIA IA</div>
+                        </div>
+                        <div class="visual-frame frame-3">
+                            <img src="img/img3.jpg" alt="Conecta2 App Interface" class="frame-img">
+                            <div class="frame-caption">03 // ECOSISTEMA CONECTA2</div>
+                        </div>
+
+                        <div class="floating-badge badge-bottom-left">
+                            <span class="dot-live"></span> OPERATIVO EN CARACAS
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="servicios" class="services">
+        <!-- Marquee Divider in Brand Orange -->
+        <div class="marquee-strip strip-orange">
+            <div class="marquee-content">
+                <span>⚡ MOVILIDAD INTELIGENTE</span>
+                <span>//</span>
+                <span>★ FISIOTERAPIA CON IA</span>
+                <span>//</span>
+                <span>⚡ REPARTO Y LOGÍSTICA</span>
+                <span>//</span>
+                <span>★ CARACAS - VENEZUELA</span>
+                <span>//</span>
+                <span>⚡ MOVILIDAD INTELIGENTE</span>
+                <span>//</span>
+                <span>★ FISIOTERAPIA CON IA</span>
+                <span>//</span>
+                <span>⚡ REPARTO Y LOGÍSTICA</span>
+                <span>//</span>
+                <span>★ CARACAS - VENEZUELA</span>
+            </div>
+        </div>
+
+        <!-- Bento Grid of Services -->
+        <section id="servicios" class="services-section">
             <div class="container">
-                <h2 class="section-title text-center fade-in-up">Nuestros <span>Servicios</span></h2>
-                <div class="services-grid">
-                    <div class="service-card card-transport hover-lift fade-in-up" style="animation-delay: 0.1s;">
-                        <div class="service-icon turquoise-glow">
+                <div class="section-header">
+                    <div class="section-tag">[ CATÁLOGO DE SOLUCIONES ]</div>
+                    <h2 class="section-title">SERVICIOS DE ALTO IMPACTO</h2>
+                    <p class="section-subtitle">Tecnología construida con propósito para solucionar necesidades críticas del día a día.</p>
+                </div>
+
+                <div class="services-bento">
+                    <!-- Card 1: Movilidad -->
+                    <div class="bento-card card-transport">
+                        <div class="card-badge bg-turquoise">TRANSPORTE // 01</div>
+                        <div class="card-icon-box">
                             <i class="fas fa-car-side"></i>
                         </div>
-                        <h3>Movilidad y Transporte</h3>
-                        <p>Viaja seguro y rápido con nuestra app de transporte. Conductores verificados y tarifas
-                            transparentes para tu tranquilidad.</p>
+                        <h3 class="card-title">Movilidad Urbana & Traslados</h3>
+                        <p class="card-text">
+                            Muévete por la ciudad con total certeza. Rutas optimizadas, conductores certificados con 
+                            verificación de antecedentes y tarifas transparentes en tiempo real sin sorpresas.
+                        </p>
+                        <div class="card-features">
+                            <span class="feature-tag">✔ Geolocalización GPS precisa</span>
+                            <span class="feature-tag">✔ Botón de SOS y monitoreo</span>
+                            <span class="feature-tag">✔ Pagos en Pago Móvil & Binance</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contacto" class="btn btn-secondary btn-full">PEDIR TRASLADO ➔</a>
+                        </div>
                     </div>
-                    <div class="service-card card-physio hover-lift fade-in-up" style="animation-delay: 0.3s;">
-                        <div class="service-icon orange-glow">
+
+                    <!-- Card 2: Fisioterapia IA -->
+                    <div class="bento-card card-physio featured">
+                        <div class="card-badge bg-orange">INNOVACIÓN IA // 02</div>
+                        <div class="card-icon-box">
                             <i class="fas fa-heartbeat"></i>
                         </div>
-                        <h3>Fisioterapia Digital IA</h3>
-                        <p>Recuperación desde casa. Nuestra IA analiza tus movimientos y personaliza rutinas de
-                            ejercicios para una rehabilitación efectiva.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="delivery" class="delivery-fleet">
-            <div class="delivery-overlay"></div>
-            <div class="container delivery-container">
-                <div class="delivery-content fade-in-left">
-                    <h2 class="section-title">Flota para <span>Deliverys</span></h2>
-                    <p class="delivery-statement">
-                        Potencia tu negocio con nuestra flota de repartidores dedicada. Rapidez, seguridad y tecnología
-                        para que tus envíos lleguen a cualquier rincón de Caracas.
-                    </p>
-                    <a href="#contacto" class="btn btn-primary">Contáctanos</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="mision" class="mission">
-            <div class="container mission-container">
-                <div class="mission-content fade-in-up">
-                    <h2 class="section-title">Nuestra <span>Misión</span></h2>
-                    <p class="mission-statement">
-                        "Conectar a los venezolanos con soluciones digitales innovadoras, mejorando su calidad de vida a
-                        través de servicios de movilidad seguros y atención de fisioterapia accesible impulsada por
-                        inteligencia artificial."
-                    </p>
-                    <div class="mission-stats">
-                        <div class="stat">
-                            <span class="stat-number" data-target="100">0</span><span>%</span>
-                            <span class="stat-label">Compromiso</span>
+                        <h3 class="card-title">Fisioterapia Digital Asistida por IA</h3>
+                        <p class="card-text">
+                            Rehabilitación biomecánica desde tu hogar. Nuestra Inteligencia Artificial analiza tus posturas, 
+                            cuenta repeticiones en video y adapta planes clínicos supervisados por kinesiólogos certificados.
+                        </p>
+                        <div class="card-features">
+                            <span class="feature-tag">✔ Análisis postural por visión artificial</span>
+                            <span class="feature-tag">✔ Métricas de evolución y dolor</span>
+                            <span class="feature-tag">✔ Rutinas guiadas por voz y video</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number" data-target="24">0</span><span>/7</span>
-                            <span class="stat-label">Disponibilidad</span>
+                        <div class="card-footer">
+                            <a href="#contacto" class="btn btn-primary btn-full">INICIAR REHABILITACIÓN ➔</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Flota Delivery -->
+                    <div class="bento-card card-delivery">
+                        <div class="card-badge bg-turquoise">LOGÍSTICA // 03</div>
+                        <div class="card-icon-box">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <h3 class="card-title">Flota para Deliverys & Envíos</h3>
+                        <p class="card-text">
+                            Potencia la logística de tu negocio o envía paquetes personales con mensajeros dedicados. 
+                            Rastreo satelital activo punto a punto en toda la Gran Caracas.
+                        </p>
+                        <div class="card-features">
+                            <span class="feature-tag">✔ Envíos inmediatos y programados</span>
+                            <span class="feature-tag">✔ Alianza B2B para comercios</span>
+                            <span class="feature-tag">✔ Confirmación por código OTP</span>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#contacto" class="btn btn-outline btn-full">CONTRATAR FLOTA ➔</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contacto" class="contact">
+        <!-- Delivery Banner Section -->
+        <section id="delivery" class="delivery-spotlight">
             <div class="container">
-                <div class="contact-box fade-in-up">
-                    <div class="contact-info">
-                        <h2>Comunícate con <span>Nosotros</span></h2>
-                        <p>¿Tienes dudas o quieres ser parte de Conecta2hub? Escríbenos.</p>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-envelope"></i> info@conecta2app.com</li>
-                            <li><i class="fas fa-phone-alt"></i> 04221485552</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Caracas, Venezuela</li>
-                        </ul>
-                        <div class="social-links">
-                            <a href="https://instagram.com/conecta2hub" target="_blank" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i> @conecta2hub
-                            </a>
+                <div class="spotlight-box">
+                    <div class="spotlight-content">
+                        <span class="spotlight-badge">★ ALIANZA PARA COMERCIOS</span>
+                        <h2 class="spotlight-title">¿TIENES UN NEGOCIO? <br><span>CONÉCTATE A NUESTRA FLOTA.</span></h2>
+                        <p class="spotlight-text">
+                            Deja de preocuparte por repartidores informales. Integra nuestra red logística a tu restaurante, 
+                            farmacia o tienda online con tarifas fijas competitivas y soporte operativo 24 horas.
+                        </p>
+                        <div class="spotlight-actions">
+                            <a href="#contacto" class="btn btn-primary btn-lg">AFILIAR MI NEGOCIO ➔</a>
+                            <span class="spotlight-note"><i class="fas fa-bolt"></i> Activación en menos de 24 horas hábiles.</span>
                         </div>
                     </div>
-                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mrevdrek" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Tu Nombre" required>
+                    <div class="spotlight-metric">
+                        <div class="metric-card bg-card-turquoise">
+                            <div class="metric-val">&lt; 35<span class="metric-unit">MIN</span></div>
+                            <div class="metric-lbl">TIEMPO PROMEDIO DE ENTREGA</div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Tu Correo" required>
+                        <div class="metric-card bg-card-orange">
+                            <div class="metric-val">99.4<span class="metric-unit">%</span></div>
+                            <div class="metric-lbl">EFECTIVIDAD DE ENTREGA</div>
                         </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Tu Mensaje" rows="4" required></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Values Section -->
+        <section id="mision" class="mission-section">
+            <div class="container">
+                <div class="mission-grid">
+                    <div class="mission-quote-card">
+                        <div class="dossier-tag">MANIFIESTO // 2026</div>
+                        <h2 class="dossier-title">NUESTRA MISIÓN NO TIENE VUELTAS.</h2>
+                        <blockquote class="mission-quote">
+                            "Conectar a los venezolanos con soluciones digitales ágiles, accesibles y de clase mundial. 
+                            Demostrando que con talento local e Inteligencia Artificial se transforman el transporte, 
+                            la salud y la economía urbana."
+                        </blockquote>
+                        <div class="signature-block">
+                            <span class="sign-name">EQUIPO CONECTA2HUB</span>
+                            <span class="sign-role">Caracas, Venezuela</span>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
-                    </form>
+                    </div>
+
+                    <div class="mission-counters">
+                        <div class="stat-box">
+                            <div class="stat-header">
+                                <span class="stat-code">SYS.01</span>
+                                <i class="fas fa-check-double"></i>
+                            </div>
+                            <div class="stat-number-wrap">
+                                <span class="stat-number" data-target="100">0</span><span class="stat-symbol">%</span>
+                            </div>
+                            <div class="stat-title">COMPROMISO CON EL USUARIO</div>
+                            <p class="stat-desc">Transparencia absoluta en cobros, tiempos y calidad de atención.</p>
+                        </div>
+
+                        <div class="stat-box stat-highlight">
+                            <div class="stat-header">
+                                <span class="stat-code">SYS.02</span>
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-number-wrap">
+                                <span class="stat-number" data-target="24">0</span><span class="stat-symbol">/7</span>
+                            </div>
+                            <div class="stat-title">DISPONIBILIDAD ACTIVA</div>
+                            <p class="stat-desc">Infraestructura tecnológica operativa en todo momento.</p>
+                        </div>
+
+                        <div class="stat-box">
+                            <div class="stat-header">
+                                <span class="stat-code">SYS.03</span>
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="stat-number-wrap">
+                                <span class="stat-number" data-target="100">0</span><span class="stat-symbol">%</span>
+                            </div>
+                            <div class="stat-title">COBERTURA CARACAS</div>
+                            <p class="stat-desc">En constante expansión hacia las principales ciudades del país.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <div class="contact-dossier">
+                    <div class="contact-sidebar">
+                        <div class="sidebar-tag">[ TERMINAL DE CONTACTO ]</div>
+                        <h2 class="sidebar-title">HABLEMOS SIN FILTROS.</h2>
+                        <p class="sidebar-text">
+                            ¿Quieres conducir con nosotros? ¿Eres fisioterapeuta? ¿Buscas entrega para tu negocio?
+                            Déjanos tus datos y nos pondremos en contacto directo contigo.
+                        </p>
+
+                        <div class="info-blocks">
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <div class="info-label">CORREO DIRECTO</div>
+                                    <a href="mailto:info@conecta2app.com" class="info-val">info@conecta2app.com</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <div class="info-label">TELÉFONO / WHATSAPP</div>
+                                    <a href="tel:04221485552" class="info-val">0422 148 5552</a>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+                                <div>
+                                    <div class="info-label">UBICACIÓN CENTRAL</div>
+                                    <span class="info-val">Caracas, Venezuela</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon"><i class="fab fa-instagram"></i></div>
+                                <div>
+                                    <div class="info-label">INSTAGRAM OFICIAL</div>
+                                    <a href="https://instagram.com/conecta2hub" target="_blank" rel="noopener" class="info-val">@conecta2hub</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card-footer">
+                            <span>ESTADO: <strong>RECEPTIVO</strong></span>
+                            <span>RESPUESTA: <strong>&lt; 2 HORAS</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <div class="form-header">
+                            <div class="form-title">FORMULARIO DE SOLICITUD</div>
+                            <div class="form-status">● EN LÍNEA</div>
+                        </div>
+
+                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mrevdrek" method="POST">
+                            <div class="form-group">
+                                <label for="name" class="form-label">TU NOMBRE O EMPRESA *</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Ej: Carlos Mendoza o Tienda Express C.A." required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">CORREO ELECTRÓNICO *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="tu@correo.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service-interest" class="form-label">SERVICIO DE INTERÉS *</label>
+                                <select id="service-interest" name="service" class="form-input form-select" required>
+                                    <option value="" disabled selected>Selecciona una opción...</option>
+                                    <option value="movilidad">Conductor / Pasajero (Movilidad Urbana)</option>
+                                    <option value="fisioterapia">Paciente / Especialista (Fisioterapia con IA)</option>
+                                    <option value="delivery">Flota de Delivery para mi Negocio</option>
+                                    <option value="alianza">Alianzas Comerciales / Inversión</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label">MENSAJE O DETALLE *</label>
+                                <textarea id="message" name="message" class="form-input" rows="4" placeholder="Cuéntanos brevemente qué necesitas..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full btn-submit" id="submitBtn">
+                                <span>ENVIAR MENSAJE AHORA</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+
+                            <div id="form-feedback" class="form-feedback" style="display: none;"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Neo-Brutalist Footer -->
     <footer class="footer">
-        <div class="container text-center">
-            <p>&copy; 2026 Conecta2hub. Todos los derechos reservados.</p>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">CONECTA<span>2</span>HUB</div>
+                <p class="footer-tagline">Tecnología robusta y sin complicaciones para los venezolanos.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/conecta2hub" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/584221485552" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:info@conecta2app.com" class="social-btn" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-col-title">NAVEGACIÓN</div>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Movilidad Urbana</a></li>
+                    <li><a href="#servicios">Fisioterapia IA</a></li>
+                    <li><a href="#delivery">Flota Delivery</a></li>
+                    <li><a href="#mision">Nuestra Misión</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-group">
+                <div class="footer-col-title">LEGAL & SEGURIDAD</div>
+                <ul class="footer-links">
+                    <li><a href="#">Términos del Servicio</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Verificación de Conductores</a></li>
+                    <li><a href="#">Soporte & Emergencias</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-action">
+                <div class="footer-col-title">¿LISTO PARA COMENZAR?</div>
+                <p class="footer-subtext">Súmate a la red que está moviendo y transformando a Caracas.</p>
+                <a href="#contacto" class="btn btn-secondary btn-sm btn-full">CONTÁCTANOS ➔</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-inner">
+                <p>&copy; 2026 CONECTA2HUB. TODOS LOS DERECHOS RESERVADOS.</p>
+                <div class="badge-brutalist">DISEÑO NEO-BRUTALISTA // V2.0</div>
+            </div>
         </div>
     </footer>
 

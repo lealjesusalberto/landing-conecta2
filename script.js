@@ -1,16 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Header scroll effect
-    const header = document.querySelector('.header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // Mobile menu toggle
+    // -------------------------------------------------------------
+    // Mobile Menu Toggle
+    // -------------------------------------------------------------
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const nav = document.querySelector('.nav');
     
@@ -27,132 +18,143 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close mobile menu on click
-        document.querySelectorAll('.nav a').forEach(link => {
+        // Close menu on navigation click
+        document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
                 const icon = mobileBtn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             });
         });
     }
 
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
+    // -------------------------------------------------------------
+    // Scroll Spy: Active Link Highlighting
+    // -------------------------------------------------------------
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                
-                // Trigger number animation if it's the mission section
-                if (entry.target.classList.contains('mission-content')) {
-                    animateNumbers();
-                }
-                
-                observer.unobserve(entry.target);
+    function updateActiveLink() {
+        const scrollY = window.pageYOffset + 120;
+
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
             }
         });
-    }, observerOptions);
+    }
 
-    document.querySelectorAll('.fade-in-up, .fade-in-left').forEach(el => {
-        observer.observe(el);
-    });
+    window.addEventListener('scroll', updateActiveLink);
 
-    // Number Counter Animation
-    let animated = false;
+    // -------------------------------------------------------------
+    // Number Counter Animation for Mission Stats
+    // -------------------------------------------------------------
+    let countersAnimated = false;
+    const statSection = document.querySelector('.mission-section');
+
     function animateNumbers() {
-        if (animated) return;
-        animated = true;
-        
+        if (countersAnimated) return;
+        countersAnimated = true;
+
         const counters = document.querySelectorAll('.stat-number');
-        const speed = 200; // lower is slower
+        const duration = 1200; // ms
 
         counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
+            const target = +counter.getAttribute('data-target');
+            const startTime = performance.now();
 
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(updateCount, 10);
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // Ease out quad
+                const easeProgress = 1 - (1 - progress) * (1 - progress);
+                const currentVal = Math.floor(easeProgress * target);
+
+                counter.textContent = currentVal;
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
                 } else {
-                    counter.innerText = target;
+                    counter.textContent = target;
                 }
-            };
-            updateCount();
+            }
+
+            requestAnimationFrame(updateCounter);
         });
     }
-    
-    // Form submission prevent default with UX
-    const form = document.querySelector('.contact-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
+
+    if (statSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+
+        observer.observe(statSection);
+    }
+
+    // -------------------------------------------------------------
+    // Contact Form Submission (Asynchronous Formspree Handling)
+    // -------------------------------------------------------------
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const feedbackBox = document.getElementById('form-feedback');
+
+    if (contactForm && submitBtn && feedbackBox) {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const btn = form.querySelector('button');
-            const originalText = btn.innerText;
-            btn.innerText = 'Enviando...';
-            btn.style.opacity = '0.7';
-            
-            // Send request to Formspree
-            fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    btn.innerText = 'Mensaje Enviado ✓';
-                    btn.style.backgroundColor = 'var(--color-turquoise)';
-                    form.reset();
-                } else {
-                    btn.innerText = 'Error al enviar';
-                    btn.style.backgroundColor = '#FF6B35';
-                }
-            }).catch(error => {
-                btn.innerText = 'Error de red';
-                btn.style.backgroundColor = '#FF6B35';
-            }).finally(() => {
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.style.backgroundColor = '';
-                    btn.style.opacity = '1';
-                }, 3000);
-            });
-        });
-    }
 
-    // Image Rotation Animation
-    const floatingImages = Array.from(document.querySelectorAll('.floating-img'));
-    if (floatingImages.length > 0) {
-        setInterval(() => {
-            const currentClasses = floatingImages.map(img => {
-                if (img.classList.contains('img-front')) return 'img-front';
-                if (img.classList.contains('img-back-left')) return 'img-back-left';
-                if (img.classList.contains('img-back-right')) return 'img-back-right';
-                return '';
-            });
-            
-            floatingImages.forEach((img, index) => {
-                const currentClass = currentClasses[index];
-                if (!currentClass) return;
-                
-                img.classList.remove('img-front', 'img-back-left', 'img-back-right');
-                
-                if (currentClass === 'img-front') {
-                    img.classList.add('img-back-left');
-                } else if (currentClass === 'img-back-left') {
-                    img.classList.add('img-back-right');
-                } else if (currentClass === 'img-back-right') {
-                    img.classList.add('img-front');
+            const originalBtnHtml = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>PROCESANDO...</span> <i class="fas fa-spinner fa-spin"></i>';
+            feedbackBox.style.display = 'none';
+            feedbackBox.className = 'form-feedback';
+
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    contactForm.reset();
+                    feedbackBox.className = 'form-feedback success';
+                    feedbackBox.innerHTML = '⚡ ¡MENSAJE ENVIADO CON ÉXITO! Nos pondremos en contacto contigo a la brevedad.';
+                    feedbackBox.style.display = 'block';
+                } else {
+                    const data = await response.json();
+                    feedbackBox.className = 'form-feedback error';
+                    feedbackBox.innerHTML = data.errors ? data.errors.map(err => err.message).join(", ") : 'Ocurrió un error al enviar el formulario. Intenta de nuevo.';
+                    feedbackBox.style.display = 'block';
                 }
-            });
-        }, 5000);
+            } catch (err) {
+                feedbackBox.className = 'form-feedback error';
+                feedbackBox.innerHTML = '⚠️ Error de conexión. Por favor verifica tu red e intenta nuevamente.';
+                feedbackBox.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+            }
+        });
     }
 });
