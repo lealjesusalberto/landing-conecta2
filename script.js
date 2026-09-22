@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileBtn.setAttribute('aria-expanded', isActive);
         });
 
-        document.querySelectorAll('.nav-link').forEach(link => {
+        navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 mobileBtn.classList.remove('active');
